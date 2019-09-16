@@ -1,0 +1,136 @@
+.header
+  .header__logo
+    グループを作成しました
+
+.side
+  .user
+    .user__header
+      .name
+        仮ユーザ名
+      .icon
+        =link_to "http://localhost:3000/", class: "icon__btn" do
+          =fa_icon 'edit'
+        =link_to "http://localhost:3000/", class: "icon__btn" do
+          = fa_icon 'cog'
+
+  .content
+    .content__group
+      仮テスト1
+    .content__text
+      さようなら
+    .content__group
+      test2
+    .content__text
+      hello!
+    .content__group
+      テスト3
+    .content__text
+      まだメッセージがありません
+    .content__group
+      テスト3
+    .content__text
+      まだメッセージがありません
+    .content__group
+      テスト3
+    .content__text
+      まだメッセージがありません
+    .content__group
+      テスト3
+    .content__text
+      まだメッセージがありません      
+    .content__group
+      テスト4
+    .content__text
+      まだメッセージがありません    
+    .content__group
+      テスト5
+    .content__text
+      まだメッセージがありません   
+
+.main
+  .chat
+    .chat__namebtn
+      .title
+        ここにはgroupタイトル
+      .btn
+        =link_to "http://localhost:3000/", class: "edit" do
+          edit
+    %ul.headermember
+      Member:
+      %li.member
+        test
+      %li.member
+        test2
+      %li.member
+        test3
+      %li.member
+        test4
+
+  .detail
+    .detail__user
+      testユーザー1
+    .detail__date
+      2019/9/1(Wed)17:50:40
+    .detail__contents
+      こんにちは
+
+    .detail__user
+      testユーザー2
+    .detail__date
+      2019/9/12(Thu)01:50:40
+    .detail__contents
+      テストテスト
+
+    .detail__user
+      testユーザー３
+    .detail__date
+      2019/9/13(Fri)04:50:40
+    .detail__contents
+      さようなら
+
+    .detail__user
+      testユーザー３
+    .detail__date
+      2019/9/13(Fri)04:50:40
+    .detail__contents
+      さようなら2
+
+    .detail__user
+      testユーザー4
+    .detail__date
+      2019/9/13(Fri)04:50:40
+    .detail__contents
+      さようなら4
+
+    .detail__user
+      testユーザー5
+    .detail__date
+      2019/9/13(Fri)04:50:40
+    .detail__contents
+      さようなら5
+
+  .footer
+
+    .form
+      .form__mask
+        -# %form{:action => "/"}
+        %input.message-input{ type: "text", placeholder: " type a message"}
+        -# .以下はなに？formタグいらない？
+        %label.upload-label{for: "upload-icon"}
+          -# =fa_icon 'image'
+          %i.fa.fa-picture-o
+          %input{type:"file",style:"display:none;",id:"upload-icon"} 
+          -# ボタンを消してる
+          -# <i class="fa fa-picture-o" aria-hidden="true"></i>なんでiタグ？
+
+      .form__btn2
+        =link_to "http://localhost:3000/", class: "send" do
+          send
+
+  //.footer
+  //  .footer__message
+  // type a message
+  //  %form{:method => "post"}
+  //    %input{:type=>"file", :name=>"img"}
+  //  =link_to "http://localhost:3000/", class: "footer__btn" do
+  //    =fa_icon 'image'
