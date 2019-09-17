@@ -115,13 +115,9 @@
       .form__mask
         -# %form{:action => "/"}
         %input.message-input{ type: "text", placeholder: " type a message"}
-        -# .以下はなに？formタグいらない？
         %label.upload-label{for: "upload-icon"}
-          -# =fa_icon 'image'
           %i.fa.fa-picture-o
           %input{type:"file",style:"display:none;",id:"upload-icon"} 
-          -# ボタンを消してる
-          -# <i class="fa fa-picture-o" aria-hidden="true"></i>なんでiタグ？
 
       .form__btn2
         =link_to "http://localhost:3000/", class: "send" do
