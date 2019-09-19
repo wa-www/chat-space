@@ -1,17 +1,17 @@
-.header
-  .header__logo
-    グループを作成しました
+-# .header
+-#   .header__logo
+-#     グループを作成しました
 
 
 .side
   .user
     .user__header
       .name
-        仮ユーザ名
+        = current_user.name
       .icon
         =link_to root_path, class: "icon__btn" do
           = fa_icon 'edit'
-        =link_to root_path, class: "icon__btn" do
+        =link_to edit_user_path(current_user), class: "icon__btn" do
           = fa_icon 'cog'
 
   .content
