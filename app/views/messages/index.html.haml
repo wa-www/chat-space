@@ -2,6 +2,10 @@
 -#   .header__logo
 -#     グループを作成しました
 
+
+.side
+  =render 'shared/side_bar'
+
 .main
   .chat
     .chat__namebtn
@@ -23,11 +27,7 @@
 
   .detail
     = render @messages
-
-
-
-
-
+    
   .footer
 
     .form
