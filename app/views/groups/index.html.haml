@@ -2,51 +2,9 @@
 -#   .header__logo
 -#     グループを作成しました
 
+.wrapper
 
-.side
-  .user
-    .user__header
-      .name
-        = current_user.name
-      .icon
-        =link_to root_path, class: "icon__btn" do
-          = fa_icon 'edit'
-        =link_to edit_user_path(current_user), class: "icon__btn" do
-          = fa_icon 'cog'
-
-  .content
-    .content__group
-      仮テスト1
-    .content__text
-      さようなら
-    .content__group
-      test2
-    .content__text
-      hello!
-    .content__group
-      テスト3
-    .content__text
-      まだメッセージがありません
-    .content__group
-      テスト3
-    .content__text
-      まだメッセージがありません
-    .content__group
-      テスト3
-    .content__text
-      まだメッセージがありません
-    .content__group
-      テスト3
-    .content__text
-      まだメッセージがありません      
-    .content__group
-      テスト4
-    .content__text
-      まだメッセージがありません    
-    .content__group
-      テスト5
-    .content__text
-      まだメッセージがありません   
+  = render 'shared/side_bar'
 
 .main
   .chat
