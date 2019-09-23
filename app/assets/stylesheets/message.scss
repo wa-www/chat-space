@@ -179,6 +179,10 @@
           top:45px;
           display:flex;
 
+          .hidden{
+            display:none;
+          }
+
         }
       }
       &__btn2{

@@ -1,0 +1,38 @@
+-# .header
+-#   .header__logo
+-#     グループを作成しました
+
+
+.side
+  =render 'shared/side_bar'
+
+.main
+  .chat
+    .chat__namebtn
+      .title
+        =@group.name
+      .btn
+        =link_to root_path, class: "edit" do
+          edit
+    %ul.headermember
+      Member:
+      -@group.users.each do |g|
+        %li.member
+          =g.name
+
+
+  .detail
+    = render @messages
+    
+  .footer
+
+    .form
+      =form_for [@group,@message] do |f|
+        .form__mask
+          =f.text_field :content,class:'message-input' ,placeholder: 'type a message'
+          = f.label :image, class: 'upload-label' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        .form__btn2
+          = f.submit 'send', class: 'send'
+
