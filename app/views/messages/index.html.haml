@@ -10,20 +10,16 @@
   .chat
     .chat__namebtn
       .title
-        ここにはgroupタイトル
+        =@group.name
       .btn
         =link_to root_path, class: "edit" do
           edit
     %ul.headermember
       Member:
-      %li.member
-        test
-      %li.member
-        test2
-      %li.member
-        test3
-      %li.member
-        test4
+      -@group.users.each do |g|
+        %li.member
+          =g.name
+
 
   .detail
     = render @messages
@@ -38,5 +34,5 @@
             = fa_icon 'picture-o', class: 'icon'
             = f.file_field :image, class: 'hidden'
         .form__btn2
-          = f.submit 'Send', class: 'send'
+          = f.submit 'send', class: 'send'
 
