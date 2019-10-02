@@ -27,7 +27,7 @@
   .footer
 
     .form
-      =form_for [@group,@message] do |f|
+      =form_for [@group,@message] , html: {id:'message_id'} do |f|
         .form__mask
           =f.text_field :content,class:'message-input' ,placeholder: 'type a message'
           = f.label :image, class: 'upload-label' do
