@@ -7,9 +7,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-    # binding.pry
     @message = @group.messages.create(message_params)
-    # binding.pry
     respond_to do |format|
       format.html{
         if @message.save
