@@ -60,7 +60,6 @@ var html_source=$(".detail");
     var dt=new FormData($(this).get(0));
 
     var url = $(this).attr('action')
-    console.log(url);
     $.ajax({
       url:url,
       type:"POST",
@@ -70,10 +69,9 @@ var html_source=$(".detail");
       contentType: false,
     })
     .done(function(data){
-      console.log(data);
       var createhtml=addHtml(data);
-      $('.message-input').val('');
       $('.detail').animate({ scrollTop: $('.detail')[0].scrollHeight });
+        $('#message_id')[0].reset();
       $('.send').attr('disabled', false);
     })
     .fail(function(){
