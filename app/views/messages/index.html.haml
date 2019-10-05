@@ -1,7 +1,5 @@
--# .header
--#   .header__logo
--#     グループを作成しました
-
+-# - content_for(:body_attributes) do
+-#   %body{"data-turbolinks"="false"}
 
 .side
   =render 'shared/side_bar'
@@ -22,7 +20,7 @@
 
 
   .detail
-    = render @messages
+    = render @messages, data: {"turbolinks" => false}
     
   .footer
 
