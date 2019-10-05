@@ -1,13 +1,9 @@
-$(function(){
-// document.addEventListener ('turbolinks:load', function() {
+$(document).on('turbolinks:load', function() {
 
-  // console.log('ok');
 var html_source=$(".detail");
 
 
   function addHtml(aaa){
-    console.log(aaa.content);
-    console.log(aaa.image);
 
     if (aaa.content != null && aaa.image != null) {
     var html=`
@@ -24,7 +20,6 @@ var html_source=$(".detail");
     </div>
     </div>`
     html_source.append(html)  
-    console.log(html);
 
     }else if (aaa.content != "" && aaa.image == null){
       var html=`
@@ -40,7 +35,6 @@ var html_source=$(".detail");
       </div>
       </div>`
       html_source.append(html)  
-      console.log(html)
 
     }else if (aaa.content == "" && aaa.image != null){
       var html=`
@@ -60,10 +54,8 @@ var html_source=$(".detail");
     }
   }
 
-  // $(document).ready(function(){
   $('#message_id').on('submit',function(e){
     e.preventDefault();
-    // console.log(this);
 
     var dt=new FormData($(this).get(0));
 
@@ -81,15 +73,13 @@ var html_source=$(".detail");
       console.log(data);
       var createhtml=addHtml(data);
       $('.message-input').val('');
-      // $("details").animate({scrollTop:$('details').offset().top});
       $('.detail').animate({ scrollTop: $('.detail')[0].scrollHeight });
       $('.send').attr('disabled', false);
     })
     .fail(function(){
       alert('error');
+      $('.send').attr('disabled', false);
     })
 
     })
   })
-  // })
-// })
