@@ -2,56 +2,27 @@ $(document).on('turbolinks:load', function() {
 
 var html_source=$(".detail");
 
+  function addHtml(message){
+    var m1 =message.content ? message.content : ""
+    var i1 =message.image ? message.imege : null;
+    if (i1=null){
+      $(".image_present").remove();
+    }
 
-  function addHtml(aaa){
-
-    if (aaa.content != null && aaa.image != null) {
     var html=`
     <div class="details">
     <div class="detail__user">
-      ${aaa.user_name}
+      ${message.user_name}
     </div>
     <div class="detail__date">
-      <time>${aaa.created_at}</time>
+      <time>${message.created_at}</time>
     </div>
     <div class="detail__contents">
-        ${aaa.content}
-        <img src="${aaa.image}" width="128" height="128">
+        ${m1}
+        <img src="${i1}" width="128" height="128" class="image_present">
     </div>
     </div>`
     html_source.append(html)  
-
-    }else if (aaa.content != "" && aaa.image == null){
-      var html=`
-      <div class="details">
-      <div class="detail__user">
-        ${aaa.user_name}
-      </div>
-      <div class="detail__date">
-        <time>${aaa.created_at}</time>
-      </div>
-      <div class="detail__contents">
-          ${aaa.content}
-      </div>
-      </div>`
-      html_source.append(html)  
-
-    }else if (aaa.content == "" && aaa.image != null){
-      var html=`
-      <div class="details">
-      <div class="detail__user">
-        ${aaa.user_name}
-      </div>
-      <div class="detail__date">
-        <time>${aaa.created_at}</time>
-      </div>
-      <div class="detail__contents">
-      <img src="${aaa.image}" width="128" height="128">
-      </div>
-      </div>
-      `
-      html_source.append(html)  
-    }
   }
 
   $('#message_id').on('submit',function(e){
@@ -69,6 +40,7 @@ var html_source=$(".detail");
       contentType: false,
     })
     .done(function(data){
+      console.log(data.image);
       var createhtml=addHtml(data);
       $('.detail').animate({ scrollTop: $('.detail')[0].scrollHeight });
         $('#message_id')[0].reset();
