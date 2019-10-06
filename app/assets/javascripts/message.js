@@ -40,7 +40,6 @@ var html_source=$(".detail");
       contentType: false,
     })
     .done(function(data){
-      console.log(data.image);
       var createhtml=addHtml(data);
       $('.detail').animate({ scrollTop: $('.detail')[0].scrollHeight });
         $('#message_id')[0].reset();
