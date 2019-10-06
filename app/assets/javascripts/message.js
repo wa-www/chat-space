@@ -3,8 +3,8 @@ $(document).on('turbolinks:load', function() {
 var html_source=$(".detail");
 
   function addHtml(message){
-    var message_sent =message.content ? message.content : ""
-    var image_sent = message.image ? `<img src="${message.image}}" width="128" height="128" class="image_present">` : "";
+    var message_sent = message.content ? message.content : "" ;
+    var image_sent = message.image ? `<img src="${message.image}" width="128" height="128" class="image_present">` : "";
 
     var html=`
     <div class="details">
