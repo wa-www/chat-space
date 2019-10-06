@@ -4,8 +4,7 @@ var html_source=$(".detail");
 
   function addHtml(message){
     var m1 =message.content ? message.content : ""
-    var i1=message.image
-    var i2 = message.image ? `<img src="${i1}" width="128" height="128" class="image_present">` : "";
+    var i1 = message.image ? `<img src="${message.image}}" width="128" height="128" class="image_present">` : "";
 
     var html=`
     <div class="details">
@@ -17,7 +16,7 @@ var html_source=$(".detail");
     </div>
     <div class="detail__contents">
         ${m1}
-        ${i2}
+        ${i1}
     </div>
     </div>`
     html_source.append(html)  
