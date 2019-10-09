@@ -31,7 +31,6 @@ function appendErrMsgToHTML(msg) {
 }
 
 function add_user_html(id,name){
-  console.log(id);
   var addhtml = `
   <div class='chat-group-user' id=${ id }>
     <input name='group[user_ids][]' type='hidden' value=${id}>
