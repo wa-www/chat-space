@@ -1,6 +1,6 @@
 $(function(){
 
-var user_list=$("#user-search-result");
+var user_list=$('#user-search-result');
 
 function add_User_id(user_ids){
   $('.chat-group-user.clearfix.js-users').each(function(){
@@ -76,14 +76,14 @@ function add_user_html(id,name){
 
   $(document).on("click", '.user-search-add', function () { 
 
-    var id=$(this).attr("data-user-id");
-    var name=$(this).attr("data-user-name");
+    var id=$(this).data("user-id");
+    var name=$(this).attr("user-name");
     $(this).parent().remove();
 
     add_user_html(id,name);
     });
 
-  $(document).on("click", '.user-search-remove', function () {
+  $(document).on('click', '.user-search-remove', function () {
       $(this).parent().remove();
     });
 });
