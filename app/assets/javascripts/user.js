@@ -77,7 +77,7 @@ function add_user_html(id,name){
   $(document).on("click", '.user-search-add', function () { 
 
     var id=$(this).data("user-id");
-    var name=$(this).attr("user-name");
+    var name=$(this).data("user-name");
     $(this).parent().remove();
 
     add_user_html(id,name);
