@@ -60,7 +60,7 @@ var html_source=$(".detail");
     var groupId = $('.details').data('group-id');
     var last_message_id = $('.details:last').data('message-id');
 
-    var url = `/groups/groupId/api/messages`;
+    url = `/groups/${groupId}/api/messages`;
 
     $.ajax({
       url: url,
