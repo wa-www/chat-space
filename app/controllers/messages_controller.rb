@@ -19,6 +19,7 @@ class MessagesController < ApplicationController
         end
       }
       format.json
+
     end
   end
 

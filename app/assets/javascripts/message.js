@@ -7,7 +7,7 @@ var html_source=$(".detail");
     var image_sent = message.image ? `<img src="${message.image}" width="128" height="128" class="image_present">` : "";
 
     var html=`
-    <div class="details">
+    <div class="details" data-group-id="${ message.group_id }" data-message-id="${ message.id}" >
     <div class="detail__user">
       ${message.user_name}
     </div>
@@ -19,6 +19,7 @@ var html_source=$(".detail");
         ${image_sent}
     </div>
     </div>`
+
     html_source.append(html)  
   }
 
@@ -48,4 +49,34 @@ var html_source=$(".detail");
     })
 
     })
-  })
+
+
+  if(location.href.match(/\/groups\/\d+\/messages/)){
+  setInterval(reloadMessages, 5000);
+  }
+
+  function reloadMessages() {
+
+    var groupId = $('.details').data('group-id');
+    var last_message_id = $('.details:last').data('message-id');
+
+    url = `/groups/${groupId}/api/messages`;
+
+    $.ajax({
+      url: url,
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id,group_id:groupId}
+    })
+    .done(function(messages) {
+
+        messages.forEach(function(message){
+          addHtml(message); 
+          $('.detail').animate({scrollTop: $('.detail')[0].scrollHeight});
+        })
+    })
+    .fail(function() {
+      alert('エラー');
+    });
+  }; 
+})
