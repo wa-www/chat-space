@@ -19,7 +19,7 @@ class MessagesController < ApplicationController
         end
       }
       format.json
-      # binding.pry
+
     end
   end
 
