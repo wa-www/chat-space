@@ -60,7 +60,7 @@ var html_source=$(".detail");
     var groupId = $('.details').data('group-id');
     var last_message_id = $('.details:last').data('message-id');
 
-    url = '/groups/' + groupId + '/api/messages';
+    var url = `/groups/groupId/api/messages`;
 
     $.ajax({
       url: url,
@@ -73,11 +73,10 @@ var html_source=$(".detail");
         messages.forEach(function(message){
           addHtml(message); 
           $('.detail').animate({scrollTop: $('.detail')[0].scrollHeight});
-          console.log(message);
         })
     })
     .fail(function() {
-      console.log('エラー');
+      alert('エラー');
     });
   }; 
 })
