@@ -15,7 +15,7 @@ var html_source=$(".detail");
       <time>${message.created_at}</time>
     </div>
     <div class="detail__contents">
-        ${message_sent}
+        ${message_sent}</br>
         ${image_sent}
     </div>
     </div>`

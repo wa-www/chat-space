@@ -6,4 +6,4 @@
   .detail__contents
     - if message.content.present?
       = message.content
-    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+    %br= image_tag message.image.url, class: 'lower-message__image', height:"128", width:"128" if message.image.present?
