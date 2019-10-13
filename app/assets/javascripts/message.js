@@ -57,8 +57,8 @@ var html_source=$(".detail");
 
   function reloadMessages() {
 
-    var groupId = $('.details').data('group-id');
-    var last_message_id = $('.details:last').data('message-id');
+    var groupId = $('.detail').data('group-id');
+    var last_message_id =$('.details:last').data('message-id') || 0;
 
     url = `/groups/${groupId}/api/messages`;
 
