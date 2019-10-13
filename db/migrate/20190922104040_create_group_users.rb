@@ -1,6 +1,9 @@
 class CreateGroupUsers < ActiveRecord::Migration[5.0]
   def change
-    add_foreign_key "group_users", "users"
-    add_foreign_key "group_users", "groups"
+    create_table :group_users do |t|
+      t.references :group, foreign_key: true
+      t.references :user, foreign_key: true
+      t.timestamps
+    end
   end
 end
