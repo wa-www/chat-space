@@ -4,7 +4,7 @@
 
 .main
   .chat
-    .chat__namebtn
+    .chat__namebtn{"data-group-id": "#{@group.id}"}
       .title
         =@group.name
       .btn
@@ -17,7 +17,7 @@
           =g.name
 
 
-  .detail{"data-group-id": "#{@group.id}"}
+  .detail
     = render @messages
     
   .footer
