@@ -3,8 +3,8 @@ $(function(){
 var user_list=$('#user-search-result');
 
 function add_User_id(user_ids){
-  $('.chat-group-user.clearfix.js-users').each(function(){
-    var user_id = $(this).attr('id');
+  $('#add_user').each(function(){
+    var user_id = $(this).data('user-id');
     user_ids.push(user_id);
   });
   return user_ids;
@@ -20,6 +20,7 @@ function appendUser(user){
       <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加</div>
     </div>   
     `
+  
   user_list.append(html);
   }
 
@@ -32,7 +33,7 @@ function appendErrMsgToHTML(msg) {
 
 function add_user_html(id,name){
   var addhtml = `
-  <div class='chat-group-user' id=${ id }>
+  <div class='chat-group-user' data-user-id="${id}" id="add_user">
     <input name='group[user_ids][]' type='hidden' value=${id}>
     <p class='chat-group-user__name'>${name}</p>
     <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
@@ -59,7 +60,7 @@ function add_user_html(id,name){
       $("#user-search-result").empty();
       if (results.length!==0){
         results.forEach(function(user){
-          appendUser(user); 
+          appendUser(user);
         }); 
         }
         else {
