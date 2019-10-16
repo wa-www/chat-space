@@ -1,7 +1,5 @@
-
 .side
   =render 'shared/side_bar'
-
 .main
   .chat
     .chat__namebtn{"data-group-id": "#{@group.id}"}
@@ -15,13 +13,9 @@
       -@group.users.each do |g|
         %li.member
           =g.name
-
-
   .detail
     = render @messages
-    
   .footer
-
     .form
       =form_for [@group,@message] , html: {id:'message_id'} do |f|
         .form__mask
@@ -29,6 +23,6 @@
           = f.label :image, class: 'upload-label' do
             = fa_icon 'picture-o', class: 'icon'
             = f.file_field :image, class: 'hidden'
-        .form__btn2
-          = f.submit 'send', class: 'send'
+          .form__btn2
+            = f.submit 'send', class: 'send'
 

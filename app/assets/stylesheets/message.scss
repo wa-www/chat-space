@@ -2,19 +2,6 @@
   box-sizing: border-box;
 }
 
-
-.header{
-  height: 30px;
-  width: 100vw;
-
-  &__logo{
-    background-color: #38AEF0;
-    color:#ffffff;
-    text-align: center;
-    width:100%;
-  }
-}
-
 .side{
   float:left;
   width:300px;
@@ -26,7 +13,7 @@
     padding: 0 20px;
     display:flex;
 
-    &__header{ //box
+    &__header{
       height:100px;
       color:$white;
       font-weight:bold;
@@ -40,28 +27,33 @@
       }
       .icon{
         display:flex;
+        &__btn{
+          color:$white;
+        }
       }
     }
   }
   .content{
     background-color: $blue2;
     font-weight:bold;
-    color:white;
     height: calc(100vh - 100px); 
     padding: 20px 20px 0;
     overflow-y: scroll;
 
     .group{
       box-sizing: border-box;
+      color:$white;
 
       &__name{
         clear:both;
         font-size:15px;
+        color:$white;
       }
       &__text{
         font-size:11px;
         padding-top:5px;
-        padding-bottom:20px;        
+        padding-bottom:20px;
+        color:$white;        
       }
     }
   }
@@ -120,7 +112,7 @@
 
   .detail{
     overflow-y: scroll;
-    clear:both; //かからない！
+    clear:both;
     height:calc(100vh - 190px);
     background-color: #fafafa;
     position:relative; 
@@ -151,55 +143,50 @@
 }
   .footer{
     width:calc(100vw - 300px);
-    float:left;
-    top:calc(100vh - 40px); 
     background-color: gray;
     height:90px;
+    box-sizing: border-box;
 
     .form{
-      &__mask{
-        float:left;
-        padding-left:40px;
+        &__mask{
         display:flex;
-        padding-top:20px;
-        position:relative;
-
+        padding:20px 40px;
+        width:calc(100vw - 300px);
+        height:100%;
 
         .message-input{
-          width:900px; //仮置き
+          width:90vw;
           height:50px;
-          font-size:16px; 
-          display:flex;
-
+          font-size:16px;
+          box-sizing: border-box;
+          position:relative;
         }
         .upload-label{
           position:absolute;
-          left:calc(940px - 24px);
+          left:calc(100vw - 150px);
           cursor: pointer;
-          top:45px;
+          bottom:35px;
           display:flex;
-
           .hidden{
             display:none;
           }
-
         }
       }
-      &__btn2{
-        .send{
-          float:left;
-          background-color:#38AEF0;
+        &__btn2{
           height:50px;
-          text-align: center;
-          padding:0 20px;
-          line-height: 50px;
-          color:$white;
-          margin-left: 15px;
-          margin-top:20px;
-          cursor: pointer;
-        }
+          width:70px;
+          margin-left:auto;
 
-      }
+          .send{
+            background-color:#38AEF0;
+            height:50px;
+            padding:0 20px;
+            line-height: 50px;
+            color:$white;
+            margin-left: 15px;
+            cursor: pointer;
+          }
+        }
     }
   }
 
