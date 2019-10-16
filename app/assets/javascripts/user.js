@@ -54,12 +54,14 @@ function add_user_html(id,name){
     
     .done(function(results){
       $("#user-search-result").empty();
-      if (results.length!==0){
+      if (results.length!==0 && $("#user-search-field").val()!==""){
         results.forEach(function(user){
           appendUser(user);
         }); 
         }
-        else {
+        else if (results.length!==0 && $("#user-search-field").val()==""){
+        }
+        else{
           appendErrMsgToHTML("一致するユーザーがいません"); 
         }
     })
